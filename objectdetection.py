@@ -33,8 +33,11 @@ while True:  #
        for classId, confidence, box in zip(classIds.flatten(), confs.flatten(), bbox):
            cv2.rectangle(vid, box, color=(0, 255, 0), thickness=2)
            cv2.putText(vid, classNames[classId-1].upper(), (box[0]+10, box[1]+30), cv2.FONT_HERSHEY_COMPLEX, 1, (0,255,0), 2)
-      
- 
+   objectname = classNames[classId-1]   
+   #print(objectname)
+   if(objectname == "backpack"):
+      print("THIS IS A CLASSROOM")
+   
  
  
    cv2.imshow("Output",vid)
